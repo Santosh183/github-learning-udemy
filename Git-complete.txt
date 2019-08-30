@@ -36,7 +36,8 @@
 	   git status : now will tell branch name and whether branch is in sync with remote repository. but also it will tell files to commit
 	                means those files which are added to staging area but not yet commited.
 	3) now we can commit our local file.
-	   git commit -m "message for that particular commit which contain all staged changes"
+	   git commit -m "message for that particular commit which contain all staged changes" 
+	   // if we do not give commit message git will invoke editor asking for message.after entering message press escape esc and then type :wq and hit enter to go back.
 	   git status: now will tell extra info that local branch(master) is ahead of remote branch(origin/master) by 1 change.(default branch is master obviously)
 	   it also tell that working directory is clean means there is nothing present in staging area. and ofcourse no untracked file if nothing which is in
 	   unstaged state. i.e. not moved to staging area. 
@@ -51,4 +52,40 @@
 	   // while we pushing our local commits to remote branch we are interacting to github account so while executing git push origin master
 	      gitbash may ask for username and password if they are not configured locally.
 	   
--->
+--> origin is nothing but name of the remote we have set for our local repository. we usually will deal with only one remote. so adding origin while
+    pushing can be omited but recommended to add as best practice. however in case we have multiple remotes we have to specify name which is origin for github.
+	there could be other remotes similar to github. similarely if we don't provide branch name it will push branch which is checked out. but by providing name we can 
+	even push branch which is created but not checked out (not working currently).
+	
+--> Two start and project with git we usually will face 3 different scenarios:
+	1) We haven't created repository at local as well as at remote. we have to start freshly with beginning.
+	   git init repo-name: will initiate empty git repository with given name in that particular folder. git init causes to create all configuration required for git repo.
+	   git add, commit and but we can't push until we match it with remote repo. so first we need to go to our github account and create repo (without readme.txt)
+	   then copy the url of that repo and then. 
+	   git remote add origin repourl; git push origin master; 
+	2) we have develpoed code on local project and now thinking to push it to github. process would be exactly same as aboe scenario except we have already changes to add.
+	3) 
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
