@@ -1,0 +1,47 @@
+--> Git is distributed version control system for tracking source code during software development. can be used for any document containing code.
+	in distributed versioning like git we can work without network connection as we have local copies of all branches. 
+
+--> there are plenty of graphical interfaces for using Git but they don't have all functionality that we have with using comand line.
+    using command line we can build some powerful commands which we can't using GUI so comand line is always  perfered.
+
+--> main advantage which Git provides are below: Backup of code, Versioning /history of development, opportunity to undo particular changes, 
+	Comparing code at differnt stages of development, collbaration among different developers, We can figure out which developer did mistake,
+	we can isolate the different code changes from one another, we can write sample code without disturbing original code, we can switch different 
+	context, some git tool even provide opportunity to review code in bits and pieces.
+
+--> git has always 4 stages out of which 3 are local and last 4th on the remote serve.
+	1) local working directory : folder which store all content of our project.
+	2) staging area: the place which queues changes to commit in future.
+	3) Git repository (hidden .git folder in working directory) : manage all commit history to the repository.
+	4) remote repository: Final step where we have to save all local things to remote server. 
+	5) branches: contain commits or rahter branches are collection of commits to repository.
+	   by default when we create repository we get master branch as default branch.
+
+--> To start with github first we should have github account. there are alternative but github is by far most famous among all.
+	1) create new repository.
+	2) create local folder where we want to keep our local repository install gitbash for windows.
+	3) open gitbash from created folder and clone it using git clone reposurl // we have to provide http or ssh url of the repository. http for beginner.
+
+--> git config --global user.name ="username" and git config --global user.email ="emailid" set the basic info to work with in future.
+	we can check same by typing git config --global list
+
+--> git status command tell us on which branch you are on currently and also if that branch is in sync with remote repository or not.
+
+--> now to start with let's create sample text file in our local repository.
+	1) created start.txt. git status will tell us branch name and will say branch is up to date with remote branch.
+	   but it will also tell that there is one untracked file. untracked file means just changes to local which are not even added.
+	2) we have to add those changes to staging area. staging area accumulate all such changes so that in future we can commit all of them
+	   together as one bunch. we have to add message for that bunch.
+	   git add filename : will add file to staging area.
+	   git status : now will tell branch name and whether branch is in sync with remote repository. but also it will tell files to commit
+	                means those files which are added to staging area but not yet commited.
+	3) now we can commit our local file.
+	   git commit -m "message for that particular commit which contain all staged changes"
+	   git status: now will tell extra info that local branch(master) is ahead of remote branch(origin/master) by 1 change.(default branch is master obviously)
+	   it also tell that working directory is clean means there is nothing present in staging area. and ofcourse no untracked file if nothing which is in
+	   unstaged state. i.e. not moved to staging area. 
+	   // so now we are getting idea about 3 different local regions. working directory where initial changes resides.
+	      staging area where changes reside after git add and then repository(local) where committed changes reside.
+	   // before this branches were in sync but not now because git compare only committed changes which are there in local repository.
+	   // often remote branches means origin/branchname where local branch is just branchname.
+	4) 
