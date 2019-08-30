@@ -44,4 +44,9 @@
 	      staging area where changes reside after git add and then repository(local) where committed changes reside.
 	   // before this branches were in sync but not now because git compare only committed changes which are there in local repository.
 	   // often remote branches means origin/branchname where local branch is just branchname.
-	4) 
+	4) until this step everything was local even commit. thats why our local branch is ahead of remote branch by 1 commit.
+	   git push origin master : will push the our commit to remote repository. origin name indicate that changes are being pushed to remote branch of repository.
+	   git status: will now tell that local branch is up to date with remote branch.
+	   to confirm it go to github account and check repository there must be our new changes.
+	   
+-->
