@@ -48,5 +48,7 @@
 	   git push origin master : will push the our commit to remote repository. origin name indicate that changes are being pushed to remote branch of repository.
 	   git status: will now tell that local branch is up to date with remote branch.
 	   to confirm it go to github account and check repository there must be our new changes.
+	   // while we pushing our local commits to remote branch we are interacting to github account so while executing git push origin master
+	      gitbash may ask for username and password if they are not configured locally.
 	   
 -->
