@@ -64,7 +64,14 @@
 	   then copy the url of that repo and then. 
 	   git remote add origin repourl; git push origin master; 
 	2) we have develpoed code on local project and now thinking to push it to github. process would be exactly same as aboe scenario except we have already changes to add.
-	3) 
+	3) there is public repository on github and we want to contribute to it. by git clone we just make local copy of the repository but after developing we will
+	   not able to push to remote since remote repo belongs to some other user whose credentials are private ofcourse. so we first need to go to github.comand.
+	   fork that git repo by clicking on fork button then copy of that repo will be added under our account and then we clone repo under our account and push the code 
+	   to our repo under our account. and then create merge request of our remote repo to original repo from which we had forked.
+
+--> git add . : will add all files which are modified or added to staging area. which we can commit in bunch.
+
+--> 
 	   
 	   
 	   
