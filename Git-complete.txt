@@ -73,7 +73,15 @@
 
 --> when many people work on same repository it's vvery important habbit to take latest code from remote repository before pushing our code to remote repository.
 	git pull origin master: this take latest code of remote repository to the local repository.
-	   
+
+--> if some changes are in working directory but not yet in staging area then all such files with such changes are untracked files. i.e. files are not being tracked by git.
+    once we move changes to stagin area bu git add filename then those files are being tracked by git. we can get this info by git status.
+
+--> git add doesn't mean adding new file, it means you are adding changes to staging area for upcoming commit. Also when we say something which is moved to staging area,
+	that dosen't mean file but particular change in file. So it is very possible and common that two different changes in particular file might belong to differnt region.
+	i.e. one change is still not staged and another one is staged. so when we check git status in such case we will get that file in staging as well as working directory.
+
+
 	   
 	   
 	   
