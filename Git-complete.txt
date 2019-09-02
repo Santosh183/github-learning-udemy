@@ -69,7 +69,7 @@
 	   fork that git repo by clicking on fork button then copy of that repo will be added under our account and then we clone repo under our account and push the code 
 	   to our repo under our account. and then create merge request of our remote repo to original repo from which we had forked.
 
---> git add . : (git add .) will add all files which are modified or added to staging area. which we can commit in bunch.
+--> git add . : (git add .) will add all files to stagin area which are modified or added to working directory. which we can commit in bunch.
 
 --> when many people work on same repository it's vvery important habbit to take latest code from remote repository before pushing our code to remote repository.
 	git pull origin master: this take latest code of remote repository to the local repository.
@@ -81,7 +81,14 @@
 	that dosen't mean file but particular change in file. So it is very possible and common that two different changes in particular file might belong to differnt region.
 	i.e. one change is still not staged and another one is staged. so when we check git status in such case we will get that file in staging as well as working directory.
 
+--> As of now we know that we have to add changes to stagin areas first by using git add and then we  have to commit them. Normally we commit using -m flag for the message.
+	for commit. but we can also add and commit both things in single command.
+	git commit -am "adding and commiting at same time"  in this cases all the changes which were untracked and were not present in staging area will be added to staging
+	area and will be pushed immediately.
 
+--> When we have moed changes in any file by mistake to staging area and now we realised that those changes were not necessary then we can pull back those changes from 
+	staging area using git reset HEAD
+	i.e. git reset HEAD filename.txt : it will take out filename.txt file from staging area.
 	   
 	   
 	   
