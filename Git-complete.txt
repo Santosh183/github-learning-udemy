@@ -94,7 +94,9 @@
 	and we can again add them to stagina rea. if we want delete those changes even from working directory then we can do that using git checkout -- filename.
 	i.e. git checkout -- filename.txt : will delete all changes to that particular file.
 
---> 
+--> We many time come across renaming file or moving it from one location to other location in our repository. There could be three different ways to do so and they are 
+	indeed different things from git point of view.
+	1) rename file using windows command mv. mv oldfilename.txt newfilename.txt  
 	   
 	   
 	   
