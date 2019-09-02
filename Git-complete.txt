@@ -89,7 +89,12 @@
 --> When we have moed changes in any file by mistake to staging area and now we realised that those changes were not necessary then we can pull back those changes from 
 	staging area using git reset HEAD
 	i.e. git reset HEAD filename.txt : it will take out filename.txt file from staging area.
-	   
+
+--> git reset HEAD filename can help us to move back file from stagin area to the working directory , but still those chnages are physically present in working directory
+	and we can again add them to stagina rea. if we want delete those changes even from working directory then we can do that using git checkout -- filename.
+	i.e. git checkout -- filename.txt : will delete all changes to that particular file.
+
+--> 
 	   
 	   
 	   
