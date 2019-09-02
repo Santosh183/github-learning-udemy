@@ -69,7 +69,7 @@
 	   fork that git repo by clicking on fork button then copy of that repo will be added under our account and then we clone repo under our account and push the code 
 	   to our repo under our account. and then create merge request of our remote repo to original repo from which we had forked.
 
---> git add . : will add all files which are modified or added to staging area. which we can commit in bunch.
+--> git add . : (git add .) will add all files which are modified or added to staging area. which we can commit in bunch.
 
 --> when many people work on same repository it's vvery important habbit to take latest code from remote repository before pushing our code to remote repository.
 	git pull origin master: this take latest code of remote repository to the local repository.
