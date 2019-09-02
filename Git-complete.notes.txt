@@ -96,7 +96,20 @@
 
 --> We many time come across renaming file or moving it from one location to other location in our repository. There could be three different ways to do so and they are 
 	indeed different things from git point of view.
-	1) rename file using windows command mv. mv oldfilename.txt newfilename.txt  
+	1) rename or move file using windows command mv. mv oldfilename.txt newfilename.txt (for renaming) and mv oldfilename.txt targetpath/placetomove (moving to other location): 
+	   when we do this what git think, we have deleted one file and created newer one. so in this case we have to move file explicitly to the staging area 
+	   also while moving file we have to add git add -A instead of the git add . (dot) because we are modifying some files as well as adding them to staging area.
+	   git add -A : will move all changes to staging area including those changes which include renaming, deleting, adding and editing. git add . works for editing and adding only.
+	   now we are free to commit such changes.
+	2) rename or move using git command git mv. git mv oldfilename.txt newfilename.txt (for renaming) and  git mv oldfilename.txt targetpath/placetomove (moving to other location):
+	   when we do this we don't need to move file with changes explicitly to staging area, git will do it automatically for us. in this case git will not say one file deleted 
+	   and other added or something like that which was there in case of the windows command. so we are free to commit directly.
+	3) rename or move files directly from file explorer.: in this case since we have not renamed or moved files using git mv command again when we check git status 
+	   it will say that one file deleted and another added. However in this case we don't need to use -A flag while moving file to staging area because windows internally store 
+	   file temporary in some folder after renaming or moving behind the scene and we don't want to track that unknown folder by our git repository. hence just we need to git
+	   add file newname. and we are good to go for commit.
+
+--> 
 	   
 	   
 	   
