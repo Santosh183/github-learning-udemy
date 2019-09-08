@@ -144,6 +144,38 @@
 --> git pull origin branchname : help us to take latest content from remote repository for that particular branch.
 	git push origin branchname: help us to push our local changes to the remote repository for that partiular repository.
 
+--> git status command tell us about the file which is modified but we never knows the the difference in older and newer version of the file. we have separate command for that.
+	git diff : this command shows differnce between older and modified version of the file which is not yet staged and present in working directory.
+
+--> in command prompt or gitbash it would be difficult to see comparison of the large files. and hence we need some visual merge and difference coparator tool.
+	p4merge is such open source free tool. we can install it. 
+	1) after installing add it to path variable os sstem environments variable.
+	2) after that set that tool to git configuration as differnce and merge tool by following commands.
+		git config --global merge.tool "p4merge"   // set p4merge as merge tool
+		git config --global mergetool.path "C:/Program Files/Perforce/p4merge.exe"   //set path for tool
+		git config --global mergetool.prompt true   //will ask whether to shows differences with p4merge tool or not.
+		git config --global diff.tool "p4merge"   // set p4merge as diff tool
+		git config --global difftool.path "C:/Program Files/Perforce/p4merge.exe"   //set path for tool
+		git config --global difftool.prompt true   //will ask whether to shows differences with p4merge tool or not.
+	// now instead of git diff which shows differences in commandprompt we can use different command which will show differences in the visual tool which would be easier
+	    git difftool // will ask whether to open visual merge tool. and eventually will show the differences.
+
+--> every github repository has README.md file when we create repository. that file contain plain text which describe about that repository.
+	sometime it contain instruction for people who will clone that repository, how to run project , deploy it and so on. whatever we write in README.md
+	automatically get displayed on repo page on github.
+
+--> git diff or git difftool gives us the differnces of modified file. however it shows only those files which are in working directory. 
+	to see the differences of changed files which changed since last commit.
+	git diff HEAD // will shows all file changes which are present in staging area as well as working directory. 
+	git difftool HEAD // will shows staged changes but with visual tool.
+	git diff --staged HEAD  // will shows the changes of file which are staged and not in working area. (after git add .)
+	git difftool --staged HEAD  // wil shows same output as above command but in visual form.
+	// so overall we have three types of differnces.
+		1) git diff // only working directory (not staged)
+		2) git diff HEAD // working directory + staged
+		3) git diff --staged HEAD // only staged
+		4) none for commited as we already commited it.
+
 --> 
 	
 	
