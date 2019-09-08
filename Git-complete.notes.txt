@@ -141,6 +141,9 @@
 		folder/ : ignore all file from folder with name foldler.
 	// we have to checkin .gitignore file so that in future when someone clone repository he will have that info.
 	
+--> git pull origin branchname : help us to take latest content from remote repository for that particular branch.
+	git push origin branchname: help us to push our local changes to the remote repository for that partiular repository.
+
 --> 
 	
 	
@@ -160,10 +163,4 @@
 	   
 	   
 	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
+	
