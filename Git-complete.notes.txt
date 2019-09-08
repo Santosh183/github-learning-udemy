@@ -175,6 +175,8 @@
 		2) git diff HEAD // working directory + staged
 		3) git diff --staged HEAD // only staged
 		4) none for commited as we already commited it.
+	// above commands by default shows changes of all files in respective areas. to limit that to any single file we can add filename after command type -- filename.txt
+		git diff --staged HEAD -- filename.txt // this kind of syntax holds true for all rest diff commands as well.
 
 --> 
 	
