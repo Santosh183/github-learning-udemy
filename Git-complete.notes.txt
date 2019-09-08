@@ -186,7 +186,12 @@
 
 --> git diff commitid1 commitid2 // gives the comparison of between two commits. we can use HEAD instead of any of commitid which means commitid of latest commit.
 
---> sample
+--> Another very famous scenario which we may need is comparing local branch and master branch.
+	git difftool branchname origin/branchname // will show difference between local branhc and remote branch. simply we can also compare two different branches.
+	be it local or remote.
+	// git difftool branchname origin/branchname -- filename.txt comes handy when we want to compare just one file in two differnt branches.
+
+--> 
 	
 	
 	
