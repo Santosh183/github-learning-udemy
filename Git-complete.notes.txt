@@ -109,7 +109,7 @@
 	   file temporary in some folder after renaming or moving behind the scene and we don't want to track that unknown folder by our git repository. hence just we need to git
 	   add file newname. and we are good to go for commit.
 
---> 
+--> above scenarios for moving or renaming behaves similar for deleting file.
 	   
 	   
 	   
