@@ -110,6 +110,41 @@
 	   add file newname. and we are good to go for commit.
 
 --> above scenarios for moving or renaming behaves similar for deleting file.
+
+--> git log: this command shows all historical commit with latest commits at the top. To exit from that view of commit history we have to type q to quit from view.
+	in view each commit will have unique id which almost has 30+ characters. to minimize those character in view we have another command.
+	
+	git log --abbrev-commit: it will shortened the unique id of command. because anyway usually 6 to 7 are more than suffiecient to uniquely identify the commit.
+	
+	git log --oneline --graph --decorate : this will provide commit ids shortened as well as commit messages which we had provided. --oneline make it in one line.
+	--graph shows branching graph (info) and --decorate help to show commit messages.
+	
+	git log commitid1...commitid2 : will show all commits between those commits.
+	
+	git log --since "n days ago" : this command will show all commits since n days. similary we can give hours, minutes, seconds, months, years etc.
+	
+	git log -- path/filename.txt: will show commit history of particular file. It will not shows changes such as rename or moving from one location to other.
+	
+	git log --follow -- path/filename.txt will show us all commit history including renaming or moving from one location to other.
+
+
+--> We can build some complex commands using git in command window, however typing those lengthy command again and again could be tiresome. to avoid this we have git alias.
+	we can make alias for any command which get stored in config of the git. all we have to do is store it in config with command starting with ! mark.
+	git config --global alias.hist "!git log --oneline --graph --decorate" : will create alias called hist at global level means available to all repositories.
+	now we can simple type git hist to achive same result which we could have achieved using git log --oneline --graph --decorate.
+	
+--> In our repository there could be some files which are useful but we don't want git to track them. that means git will not track any changes nor it will 
+	get pushed to remote repository. to handle such scenario all that we need to do is create .gitignore file in repository. which contain simple text lines which tells
+	which files we have to ignore.
+	ex. filename.txt : ignore particular file from repository.
+		filename*.ts: ignore all files whose name starts with filename and have extension .ts.
+		folder/ : ignore all file from folder with name foldler.
+	// we have to checkin .gitignore file so that in future when someone clone repository he will have that info.
+	
+--> 
+	
+	
+	
 	   
 	   
 	   
