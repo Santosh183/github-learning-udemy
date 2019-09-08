@@ -109,7 +109,92 @@
 	   file temporary in some folder after renaming or moving behind the scene and we don't want to track that unknown folder by our git repository. hence just we need to git
 	   add file newname. and we are good to go for commit.
 
+--> above scenarios for moving or renaming behaves similar for deleting file.
+
+--> git log: this command shows all historical commit with latest commits at the top. To exit from that view of commit history we have to type q to quit from view.
+	in view each commit will have unique id which almost has 30+ characters. to minimize those character in view we have another command.
+	
+	git log --abbrev-commit: it will shortened the unique id of command. because anyway usually 6 to 7 are more than suffiecient to uniquely identify the commit.
+	
+	git log --oneline --graph --decorate : this will provide commit ids shortened as well as commit messages which we had provided. --oneline make it in one line.
+	--graph shows branching graph (info) and --decorate help to show commit messages.
+	
+	git log commitid1...commitid2 : will show all commits between those commits.
+	
+	git log --since "n days ago" : this command will show all commits since n days. similary we can give hours, minutes, seconds, months, years etc.
+	
+	git log -- path/filename.txt: will show commit history of particular file. It will not shows changes such as rename or moving from one location to other.
+	
+	git log --follow -- path/filename.txt will show us all commit history including renaming or moving from one location to other.
+
+
+--> We can build some complex commands using git in command window, however typing those lengthy command again and again could be tiresome. to avoid this we have git alias.
+	we can make alias for any command which get stored in config of the git. all we have to do is store it in config with command starting with ! mark.
+	git config --global alias.hist "!git log --oneline --graph --decorate" : will create alias called hist at global level means available to all repositories.
+	now we can simple type git hist to achive same result which we could have achieved using git log --oneline --graph --decorate.
+	
+--> In our repository there could be some files which are useful but we don't want git to track them. that means git will not track any changes nor it will 
+	get pushed to remote repository. to handle such scenario all that we need to do is create .gitignore file in repository. which contain simple text lines which tells
+	which files we have to ignore.
+	ex. filename.txt : ignore particular file from repository.
+		filename*.ts: ignore all files whose name starts with filename and have extension .ts.
+		folder/ : ignore all file from folder with name foldler.
+	// we have to checkin .gitignore file so that in future when someone clone repository he will have that info.
+	
+--> git pull origin branchname : help us to take latest content from remote repository for that particular branch.
+	git push origin branchname: help us to push our local changes to the remote repository for that partiular repository.
+
+--> git status command tell us about the file which is modified but we never knows the the difference in older and newer version of the file. we have separate command for that.
+	git diff : this command shows differnce between older and modified version of the file which is not yet staged and present in working directory.
+
+--> in command prompt or gitbash it would be difficult to see comparison of the large files. and hence we need some visual merge and difference coparator tool.
+	p4merge is such open source free tool. we can install it. 
+	1) after installing add it to path variable os sstem environments variable.
+	2) after that set that tool to git configuration as differnce and merge tool by following commands.
+		git config --global merge.tool "p4merge"   // set p4merge as merge tool
+		git config --global mergetool.path "C:/Program Files/Perforce/p4merge.exe"   //set path for tool
+		git config --global mergetool.prompt true   //will ask whether to shows differences with p4merge tool or not.
+		git config --global diff.tool "p4merge"   // set p4merge as diff tool
+		git config --global difftool.path "C:/Program Files/Perforce/p4merge.exe"   //set path for tool
+		git config --global difftool.prompt true   //will ask whether to shows differences with p4merge tool or not.
+	// now instead of git diff which shows differences in commandprompt we can use different command which will show differences in the visual tool which would be easier
+	    git difftool // will ask whether to open visual merge tool. and eventually will show the differences.
+
+--> every github repository has README.md file when we create repository. that file contain plain text which describe about that repository.
+	sometime it contain instruction for people who will clone that repository, how to run project , deploy it and so on. whatever we write in README.md
+	automatically get displayed on repo page on github.
+
+--> git diff or git difftool gives us the differnces of modified file. however it shows only those files which are in working directory. 
+	to see the differences of changed files which changed since last commit.
+	git diff HEAD // will shows all file changes which are present in staging area as well as working directory. 
+	git difftool HEAD // will shows staged changes but with visual tool.
+	git diff --staged HEAD  // will shows the changes of file which are staged and not in working area. (after git add .)
+	git difftool --staged HEAD  // wil shows same output as above command but in visual form.
+	// so overall we have three types of differnces.
+		1) git diff // only working directory (not staged)
+		2) git diff HEAD // working directory + staged
+		3) git diff --staged HEAD // only staged
+		4) none for commited as we already commited it.
+	// above commands by default shows changes of all files in respective areas. to limit that to any single file we can add filename after command type -- filename.txt
+		git diff --staged HEAD -- filename.txt // this kind of syntax holds true for all rest diff commands as well.
+	// when we use difftool it will shows differences for each files one after other.
+
+--> HEAD always refers to last latest commit that we did. hence when we say HEAD in command that often means consider al changes since last commit.
+	also we have ~ and ^ signs to derive some of the interesting expressions.
+	HEAD^ means previous version of latest commit. HEAD^^ means previous to previous version of latest commit.
+	HEAD~3 means just three time previous version of the latest commit. similarely using ~ we can have nth previous version of commit.
+
+--> git diff commitid1 commitid2 // gives the comparison of between two commits. we can use HEAD instead of any of commitid which means commitid of latest commit.
+
+--> Another very famous scenario which we may need is comparing local branch and master branch.
+	git difftool branchname origin/branchname // will show difference between local branhc and remote branch. simply we can also compare two different branches.
+	be it local or remote.
+	// git difftool branchname origin/branchname -- filename.txt comes handy when we want to compare just one file in two differnt branches.
+
 --> 
+	
+	
+	
 	   
 	   
 	   
@@ -125,10 +210,4 @@
 	   
 	   
 	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
+	
