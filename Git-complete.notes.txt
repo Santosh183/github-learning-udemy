@@ -86,7 +86,7 @@
 	git commit -am "adding and commiting at same time"  in this cases all the changes which were untracked and were not present in staging area will be added to staging
 	area and will be pushed immediately.
 
---> When we have moed changes in any file by mistake to staging area and now we realised that those changes were not necessary then we can pull back those changes from 
+--> When we have moved changes in any file by mistake to staging area and now we realised that those changes were not necessary then we can pull back those changes from 
 	staging area using git reset HEAD
 	i.e. git reset HEAD filename.txt : it will take out filename.txt file from staging area.
 
