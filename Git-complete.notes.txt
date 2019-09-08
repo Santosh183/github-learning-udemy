@@ -177,8 +177,16 @@
 		4) none for commited as we already commited it.
 	// above commands by default shows changes of all files in respective areas. to limit that to any single file we can add filename after command type -- filename.txt
 		git diff --staged HEAD -- filename.txt // this kind of syntax holds true for all rest diff commands as well.
+	// when we use difftool it will shows differences for each files one after other.
 
---> 
+--> HEAD always refers to last latest commit that we did. hence when we say HEAD in command that often means consider al changes since last commit.
+	also we have ~ and ^ signs to derive some of the interesting expressions.
+	HEAD^ means previous version of latest commit. HEAD^^ means previous to previous version of latest commit.
+	HEAD~3 means just three time previous version of the latest commit. similarely using ~ we can have nth previous version of commit.
+
+--> git diff commitid1 commitid2 // gives the comparison of between two commits. we can use HEAD instead of any of commitid which means commitid of latest commit.
+
+--> sample
 	
 	
 	
