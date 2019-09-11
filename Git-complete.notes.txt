@@ -215,7 +215,9 @@
 	
 // to merge one branch into other we have to first switch to target branch first. then simply
     git merge sourcebranch -m "message for merging".
-	
+	// by default all merges are fast forwarded merges. We explicitly have to tell git that our merge is not fast forward by --no--ff flag.
+		git merge sourcebranch --no--ff
+	//
 	
 	
 	   
