@@ -199,6 +199,9 @@
 	   current config will get attached to it which will not give problem while pushing code to remote branch.
 	// --soft option reverse commit but still changes would be there in our staging area ready to commit again.
 	// --hard option git reset --soft commitid will reverse commit as well as it will remove changes permanently as well.    
+
+
+-->	
 	
 	
 	
