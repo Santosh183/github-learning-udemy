@@ -201,7 +201,10 @@
 	// --hard option git reset --soft commitid will reverse commit as well as it will remove changes permanently as well.    
 
 
--->	
+-->	git branch -a : will give us list of all branches including local and remote branches. current active branch will have asterik before it's name.
+	git branch branchname : will create local branch with given name. 
+	git checkout branchname: will point to given local branch name.
+	git branch -m oldname newname : this command help us to rename the branch.
 	
 	
 	
