@@ -179,7 +179,7 @@
 		git diff --staged HEAD -- filename.txt // this kind of syntax holds true for all rest diff commands as well.
 	// when we use difftool it will shows differences for each files one after other.
 
---> HEAD always refers to last latest commit that we did. hence when we say HEAD in command that often means consider al changes since last commit.
+--> HEAD always refers to last latest commit that we did in currently checked out branch. hence when we say HEAD in command that often means consider al changes since last commit.
 	also we have ~ and ^ signs to derive some of the interesting expressions.
 	HEAD^ means previous version of latest commit. HEAD^^ means previous to previous version of latest commit.
 	HEAD~3 means just three time previous version of the latest commit. similarely using ~ we can have nth previous version of commit.
@@ -191,7 +191,27 @@
 	be it local or remote.
 	// git difftool branchname origin/branchname -- filename.txt comes handy when we want to compare just one file in two differnt branches.
 
---> 
+--> git reset --soft commitid : reverse commit to given commitid.
+	// this command very useful in different scenarios. when we want to reverse commit. another is important scenario. we commited some changes using any git config but while
+	   pushing we are using other git config. sometimes we have original gitconfig only in office network. what happen is when we commit whatever config was there while commiting get 
+	   attached to that config. while pushing git refer to same commit which was there while commiting. it does not refer to current config. there may be scenario 
+	   config which we used to commit at local don't have rights to push the code. in that case all that we can do is reverse commit using above command and then commit again so that
+	   current config will get attached to it which will not give problem while pushing code to remote branch.
+	// --soft option reverse commit but still changes would be there in our staging area ready to commit again.
+	// --hard option git reset --soft commitid will reverse commit as well as it will remove changes permanently as well.    
+
+
+-->	git branch -a : will give us list of all branches including local and remote branches. current active branch will have asterik before it's name. remote branches in red color.
+	git branch: will give us list of only local branches.
+	git branch branchname : will create local branch with given name. 
+	git checkout branchname: will point to given local branch name.
+	git branch -m oldname newname : this command help us to rename the branch. once we renamed local branch it's remote counterpart would be still there without renaming.
+	                                and when we push renamed branch then it will create new counterpart on remote with new name. now again if created branch with old name on local 
+									automatically it will start pointing old remote with similar name. we explicitly can set different remote though.
+	git branch -d branchname: will delete branch from local.
+	git push -d origin branchname : will delete branch from remote . (mostly remote name is origin but it could be different as well.)
+	// with git branch we create the brand new branch and then to switch to that branch we have to use git checkout branchname.
+	git checkout -b branchname : will create new branch given name and will start pinting to it immediately.
 	
 	
 	
