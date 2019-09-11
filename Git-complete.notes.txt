@@ -179,7 +179,7 @@
 		git diff --staged HEAD -- filename.txt // this kind of syntax holds true for all rest diff commands as well.
 	// when we use difftool it will shows differences for each files one after other.
 
---> HEAD always refers to last latest commit that we did. hence when we say HEAD in command that often means consider al changes since last commit.
+--> HEAD always refers to last latest commit that we did in currently checked out branch. hence when we say HEAD in command that often means consider al changes since last commit.
 	also we have ~ and ^ signs to derive some of the interesting expressions.
 	HEAD^ means previous version of latest commit. HEAD^^ means previous to previous version of latest commit.
 	HEAD~3 means just three time previous version of the latest commit. similarely using ~ we can have nth previous version of commit.
