@@ -218,7 +218,7 @@
 	// by default all merges are fast forwarded merges. We explicitly have to tell git that our merge is not fast forward by --no--ff flag.
 		git merge sourcebranch --no--ff
 	// sample sample 
-	// sample 2
+	// sample 23
 	
 	   
 	   
