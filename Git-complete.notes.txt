@@ -68,6 +68,7 @@
 	   not able to push to remote since remote repo belongs to some other user whose credentials are private ofcourse. so we first need to go to github.comand.
 	   fork that git repo by clicking on fork button then copy of that repo will be added under our account and then we clone repo under our account and push the code 
 	   to our repo under our account. and then create merge request of our remote repo to original repo from which we had forked.
+	   often in commands origin points towards the remote version of our repo. and upstream points towards the original repo from where we had forked our remote repo.
 
 --> git add . : (git add .) will add all files to stagin area which are modified or added to working directory. which we can commit in bunch.
 
@@ -220,32 +221,17 @@
 --> when delete branch using git branch -d branchname git may show warning message and discard deleting branch if our branch is not merged to it's parent branch.
 	because if we deleted branch we may loose the work we have done on that branch. still if we want to delete it forcefully we can use -D flag instead of -d.
 
--->
-
 --> to merge one branch into other we have to first switch to target branch first. then simply
     git merge sourcebranch -m "message for merging".
 	// by default all merges are fast forwarded merges. We explicitly have to tell git that our merge is not fast forward by --no--ff flag.
 		git merge sourcebranch --no--ff
-<<<<<<< HEAD
 	// git merges are fast forwarded by default when we are not parallely working on two or more different branches. in that case if we are merging those many branches
 	   one ny one. by default fast forward merge will be only for first merged branch and thenafter it will be not for subsequent branches. this is only when we have cretaed 
 	   multiple branches from one branch at same instant (same instant means when those branches are pointing to same commit of parent branch)
 	// with fast forward merge in future if we deleted our worked branch after merging we will never come to know whether changes were done with sperate branches
 	   or they were directly made in master itself. without fast forward merge (with --no-ff option) we will have tree like structure in git log which will be always 
 	   there even after deleting merged branch. name of branch might not be there but there would be evidence that we had created new branch and then merged.
-=======
-	// sample sample 
-	// sample 23
-	
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
->>>>>>> master-clone
+
 	   
 	  c1 -> c2 -> c3 -> created new branch  C1 -> C2  merged into master : git log will look like : c1 -> c2 -> c3 -> C1 -> C2      ------> fast forwarded merge
 	  
