@@ -238,7 +238,7 @@
 	  c1 -> c2 -> c3 -> created new branch  C1 -> C2  merged into master : git log will look like : c1 -> c2 -> c3               ------> with --no-ff no fast forward.
 	                                                                                                              \ C1 -> C2 -> /
 																												  
---> sample change
+--> sample change some more text from master
 	   
 	   
 	   
