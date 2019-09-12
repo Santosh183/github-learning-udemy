@@ -257,7 +257,18 @@
 	   this would have been possible using git merge as well but in that case. we have to take latest from master and then merge branch where all commits will not appear 
 	   in each other history except merged commit.
 
+--> rebasing concept we also can use while pulling code from remote branches. 	
+	consider scenario where our local master contain 2 commits and same were there in our remote master branch. but somehow what happened is we keep on developing on our local
+	machine and made another 2 commits. also on other hand some other developer pushed two commits on remote master. so our current scenario is like.
+	
+	origin master: c1  --> c2 --> c3  --> c4
+	local master: c1 --> c2 --> c5 --> c6
+	
+	now what we genrally do is take latest from origin master. so that we will have latest code (c3 and c4). and then push our changes to origin master.
+	in this scenario we also can pull with rebase.
+	git pull --rebase origin master : means  our local branch will look like c1 --> c2 --> c3 --> c4 -->c5 --> c6
 
+--> 
 	   
 	   
 	   
