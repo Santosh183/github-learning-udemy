@@ -226,12 +226,26 @@
     git merge sourcebranch -m "message for merging".
 	// by default all merges are fast forwarded merges. We explicitly have to tell git that our merge is not fast forward by --no--ff flag.
 		git merge sourcebranch --no--ff
+<<<<<<< HEAD
 	// git merges are fast forwarded by default when we are not parallely working on two or more different branches. in that case if we are merging those many branches
 	   one ny one. by default fast forward merge will be only for first merged branch and thenafter it will be not for subsequent branches. this is only when we have cretaed 
 	   multiple branches from one branch at same instant (same instant means when those branches are pointing to same commit of parent branch)
 	// with fast forward merge in future if we deleted our worked branch after merging we will never come to know whether changes were done with sperate branches
 	   or they were directly made in master itself. without fast forward merge (with --no-ff option) we will have tree like structure in git log which will be always 
 	   there even after deleting merged branch. name of branch might not be there but there would be evidence that we had created new branch and then merged.
+=======
+	// sample sample 
+	// sample 23
+	
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+>>>>>>> master-clone
 	   
 	  c1 -> c2 -> c3 -> created new branch  C1 -> C2  merged into master : git log will look like : c1 -> c2 -> c3 -> C1 -> C2      ------> fast forwarded merge
 	  
