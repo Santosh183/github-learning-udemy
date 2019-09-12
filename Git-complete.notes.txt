@@ -238,9 +238,26 @@
 	  c1 -> c2 -> c3 -> created new branch  C1 -> C2  merged into master : git log will look like : c1 -> c2 -> c3               ------> with --no-ff no fast forward.
 	                                                                                                              \ C1 -> C2 -> /
 																												  
---> sample change 
+--> Similar to git merge we have another famous command which is git rebase. instead of just understanding how to use rebase let's understand the difference
+	between merge and rebase.
+	1) In case of git merge when we merge one branch into other. target branch will contain only one commit from source branch which is for merging all changes at once.
+	   where in case of rebasing target branch will create all commits from source which were made for separate small changes. at the end in case of rebasing it will
+	   not induce merge comment in target branch.
+	2) while merging we have to checkout first target branch and then run git merge sourcebranch.
+	   in rebasing forst we have to checkout to source branch and then we can do git rebase targetbranch.
+	3) Mostly rebase is used on local branches for fetching commits from one branch to other locally we may create local branch for doing some temporary work on local 
+	   and then rebasing it to original branch with all comments. where merge is usually for remote branches where we merge one branch into other only when we finish 
+	   all our work in source branch.
+	4) let's understand git rebase in details by scenario. we have 3 commits in master. but we had created new branch when there were only 2 commits in master.
+	   now problem is we have to add our commits in new branch into master. so our new branch should have been created from commit3 in master to go this operation smoothly.
+	   on our new branch if we do git rebase master. what will happen is our new branch will import that last commit from master. so now it's like our branch is created 
+	   from commit 3 from master and not from commit2.  again to push our changes to master chekcout master and from there git rebase ournewbranch .
+	   so that all our changes from new branch will go to top of all commits in master. but while doing all this what happen is all commit from our new branch will go 
+	   in commit history of master as well. similarely when we rebased from new branch all new commits from master were imported in commit history og branch.
+	   this would have been possible using git merge as well but in that case. we have to take latest from master and then merge branch where all commits will not appear 
+	   in each other history except merged commit.
 
---> for rebasing  
+
 	   
 	   
 	   
